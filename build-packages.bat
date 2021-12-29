@@ -1,0 +1,1 @@
+dotnet build --no-incremental -c Nuget_Release -p:"FrameworkSdkPath=C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\"

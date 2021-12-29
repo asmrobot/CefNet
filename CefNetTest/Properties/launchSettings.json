@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CefAppCoreTest": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

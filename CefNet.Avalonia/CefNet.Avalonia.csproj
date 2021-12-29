@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>netstandard2.1</TargetFrameworks>
+    <!--<TargetFrameworks>netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
+    <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">$(TargetFrameworks);net461</TargetFrameworks>-->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Configurations>Debug;Release;Nuget_Release</Configurations>
+    <Description>.NET binding for the Chromium Embedded Framework (Avalonia control)</Description>
+    <PackageTags>CefNet, CEF, browser, chromium, Avalonia, AvaloniaUI</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);TRACE;AVALONIA</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\CefNet.Windows.Forms\WinApi\DWMWINDOWATTRIBUTE.cs" Link="WinApi\DWMWINDOWATTRIBUTE.cs" />
+    <Compile Include="..\CefNet.Wpf\Events\PdfPrintFinishedRoutedEventArgs.cs" Link="Events\PdfPrintFinishedRoutedEventArgs.cs" />
+    <Compile Include="..\CefNet.Wpf\Events\ScriptDialogOpeningRoutedEventArgs.cs" Link="Events\ScriptDialogOpeningRoutedEventArgs.cs" />
+    <Compile Include="..\CefNet.Wpf\Events\TextFoundRoutedEventArgs.cs" Link="Events\TextFoundRoutedEventArgs.cs" />
+    <Compile Include="..\CefNet\WebView.CommonImplementation.cs" Link="WebView.CommonImplementation.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CefNet\CefNet.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.10.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Events\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1;net462;net5.0-windows</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Configurations>Debug;Release;Nuget_Release</Configurations>
+    <Description>.NET binding for the Chromium Embedded Framework (WPF control)</Description>
+    <PackageTags>CefNet, CEF, browser, chromium, WPF</PackageTags>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);TRACE;WPF</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^net\d+$'))">
+    <DefineConstants>$(DefineConstants);NETFRAMEWORK</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\CefNet.Windows.Forms\CefNetDragData.cs" Link="CefNetDragData.cs" />
+    <Compile Include="..\CefNet.Windows.Forms\Internal\CrossThreadEventMethod.cs" Link="Internal\CrossThreadEventMethod.cs" />
+    <Compile Include="..\CefNet.Windows.Forms\WinApi\DWMWINDOWATTRIBUTE.cs" Link="WinApi\DWMWINDOWATTRIBUTE.cs" />
+    <Compile Include="..\CefNet\WebView.CommonImplementation.cs" Link="WebView.CommonImplementation.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Buffers" Version="4.5.0" Condition="$(DefineConstants.Contains(NETFRAMEWORK))" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CefNet\CefNet.csproj" />
+  </ItemGroup>
+
+</Project>

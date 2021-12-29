@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>x86;x64</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);TRACE;MODERNFORMS</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\WinFormsCoreApp\CefAppImpl.cs" Link="CefAppImpl.cs" />
+    <Compile Include="..\WinFormsCoreApp\CefNetWindowsFormsExtensions.cs" Link="CefNetWindowsFormsExtensions.cs" />
+    <Compile Include="..\WinFormsCoreApp\CustomWebView.cs" Link="CustomWebView.cs" />
+    <Compile Include="..\WinFormsCoreApp\CustomWebViewGlue.cs" Link="CustomWebViewGlue.cs" />
+    <Compile Include="..\WinFormsCoreApp\IPhoneDevice.cs" Link="IPhoneDevice.cs" />
+    <Compile Include="..\WinFormsCoreApp\IWebViewTab.cs" Link="IWebViewTab.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Modern.Forms" Version="0.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CefNet.Modern.Forms\CefNet.Modern.Forms.csproj" />
+    <ProjectReference Include="..\CefNet\CefNet.csproj" />
+  </ItemGroup>
+
+</Project>

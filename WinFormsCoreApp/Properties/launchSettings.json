@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WinFormsCoreApp": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

@@ -1,0 +1,226 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <!--<TargetFrameworks>netstandard2.1;netstandard2.0;net5.0</TargetFrameworks>
+    <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">$(TargetFrameworks);net45;net48</TargetFrameworks>-->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>9.0</LangVersion>
+    <NoWarn>$(NoWarn),IDE1006,IDE0017,IDE0016</NoWarn>
+    <DefineConstants>$(DefineConstants);TRACE;WINDOWLESS</DefineConstants>
+    <Configurations>Debug;Release;Nuget_Release</Configurations>
+    <Description>
+      .NET binding for the Chromium Embedded Framework v.$(CefVersion).*
+
+      CEF binary packages are available for download at:
+      http://opensource.spotify.com/cefbuilds/index.html
+    </Description>
+    <PackageTags>CefNet, CEF, browser, chromium</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Nuget_Release'">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net45'">
+    <DefineConstants>$(DefineConstants);NET45;NETSTANDARD_2_0</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net48'">
+    <DefineConstants>$(DefineConstants);NET48;NETSTANDARD_2_0</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <DefineConstants>$(DefineConstants);NETSTANDARD_2_0</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^net\d+$'))">
+    <DefineConstants>$(DefineConstants);NETFRAMEWORK;NET_LESS_5_0</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(TargetFramework.StartsWith('netstandard')) OR $(TargetFramework.StartsWith('netcoreapp'))">
+    <DefineConstants>$(DefineConstants);NET_LESS_5_0</DefineConstants>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Folder Include="Generated\Managed\Types\" />
+    <Folder Include="Generated\Managed\MSIL\" />
+    <Folder Include="Generated\Managed\Enums\" />
+    <Folder Include="Generated\Native\Types\" />
+    <Folder Include="Generated\Native\MSIL\" />
+    <Folder Include="Generated\Native\Typedefs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <IL Include="Windows\Windows.il" Condition="$(RuntimeIdentifier.StartsWith('win')) or $(Platform.StartsWith('win')) or '$(Configuration)'=='Nuget_Release' or '$(OS)' == 'Windows_NT'" />
+    <IL Include="**\*.il" Exclude="**\obj\**\*.il;**\bin\**\*.il;Windows\Windows.il" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Generated\Managed\Internal\CefCompletionCallbackGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefCookieVisitorGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefDeleteCookiesCallbackGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefDevToolsMessageObserverGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefDOMVisitorGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefDownloadImageCallbackGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefEndTracingCallbackGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefExtensionHandlerGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefMediaObserverGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefMediaRouteCreateCallbackGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefMediaSinkDeviceInfoCallbackGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefMenuModelDelegateGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefNavigationEntryVisitorGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefReadHandlerGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefRegisterCDMCallbackGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefRequestContextHandlerGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefResolveCallbackGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefResourceBundleHandlerGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefResourceHandlerGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefResponseFilterGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefRunFileDialogCallbackGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefSchemeHandlerFactoryGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefServerHandlerGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefSetCookieCallbackGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefStringVisitorGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefTaskGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefUrlRequestClientGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefV8AccessorGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefV8ArrayBufferReleaseCallbackGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefV8HandlerGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefV8InterceptorGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefWebPluginInfoVisitorGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefWebPluginUnstableCallbackGlue.cs" />
+    <Compile Remove="Generated\Managed\Internal\CefWriteHandlerGlue.cs" />
+  </ItemGroup>
+
+  <UsingTask TaskName="WriteUTF8TextToFile" TaskFactory="RoslynCodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup>
+      <File ParameterType="System.String" Required="True" />
+      <Text ParameterType="System.String" Required="True" />
+    </ParameterGroup>
+    <Task>
+      <Code Type="Fragment" Language="cs">
+        <![CDATA[
+          System.IO.File.WriteAllText(File, Text, System.Text.Encoding.UTF8);
+        ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+
+  <Target Name="ProcessILAfterCompile" AfterTargets="Compile">
+    <CallTarget Targets="InitializeIL; CoreDecompile; ConvertResources; CoreCompileIL" />
+  </Target>
+  
+  <Target Name="InitializeIL">
+    <PropertyGroup>
+      <ILFile>@(IntermediateAssembly->'%(RootDir)%(Directory)%(Filename).il', ' ')</ILFile>
+      <ILResourceResFile>@(IntermediateAssembly->'%(RootDir)%(Directory)%(Filename).res', ' ')</ILResourceResFile>
+      <ILResourceObjFile>@(IntermediateAssembly->'%(RootDir)%(Directory)%(Filename).res.obj', ' ')</ILResourceObjFile>
+    </PropertyGroup>
+  </Target>
+  
+  <Target Name="CoreDecompile" Inputs="@(IntermediateAssembly)" Outputs="$(ILFile)" Condition=" Exists ( @(IntermediateAssembly) ) ">
+    <GetFrameworkSdkPath Condition="'$(MSBuildRuntimeType)' == 'Full' AND '$(FrameworkSdkPath)' == ''">
+      <Output TaskParameter="Path" PropertyName="FrameworkSdkPath" />
+    </GetFrameworkSdkPath>
+    <PropertyGroup>
+      <ILDasmExe>$(FrameworkSdkPath)\bin\NETFX 4.8 Tools\ildasm.exe</ILDasmExe>
+      <ILDasm>"$(ILDasmExe)" /nobar /linenum /source /utf8 /out="$(ILFile)" @(IntermediateAssembly->'"%(FullPath)"', ' ')</ILDasm>
+      <ILDasm Condition=" !Exists ( $(ILDasmExe) ) ">dotnet asm ildasm -linenum -source -utf8 -out="$(ILFile)" @(IntermediateAssembly->'"%(FullPath)"', ' ')</ILDasm>
+    </PropertyGroup>
+    <Exec Command="$(ILDasm)" />
+    <ItemGroup>
+      <FileWrites Include="$(ILFile)" />
+      <FileWrites Include="$(ILResourceResFile)" />
+    </ItemGroup>
+    <PropertyGroup>
+      <ILSource>$([System.IO.File]::ReadAllText($(ILFile)))</ILSource>
+      <Replacement>// method ${method} forwardref removed for IL import</Replacement>
+      <Pattern>\.method [^{}]+ cil managed forwardref[^}]+} // end of method (?&lt;method&gt;[^ \r\t\n]+)</Pattern>
+      <ILSource>$([System.Text.RegularExpressions.Regex]::Replace($(ILSource), $(Pattern), $(Replacement)))</ILSource>
+    </PropertyGroup>
+    <WriteUTF8TextToFile File="$(ILFile)" Text="$(ILSource)" />
+    <PropertyGroup>
+      <ILSource />
+    </PropertyGroup>
+    <Delete Files="@(IntermediateAssembly)" />
+  </Target>
+
+  <Target Name="ConvertResources" Inputs="$(ILResourceResFile)" Outputs="$(ILResourceObjFile)" Condition="Exists('$(ILResourceResFile)') AND '$(OS)' == 'Windows_NT'">
+    <GetFrameworkPath>
+      <Output TaskParameter="Path" PropertyName="FrameworkPath" />
+    </GetFrameworkPath>
+    <ItemGroup>
+      <FileWrites Include="$(ILResourceObjFile)" />
+    </ItemGroup>
+    <PropertyGroup>
+      <FrameworkPath Condition="!Exists('$(FrameworkPath)')">C:\Windows\Microsoft.NET\Framework\v4.0.30319</FrameworkPath>
+      <CvtRes>$(FrameworkPath)\cvtres.exe /NOLOGO /MACHINE:x86 /OUT:"$(ILResourceObjFile)" "$(ILResourceResFile)"</CvtRes>
+    </PropertyGroup>
+    <Exec Command="$(CvtRes)" />
+  </Target>
+
+  <Target Name="CoreCompileIL" Inputs="@(IL)" Outputs="@(IntermediateAssembly)">
+    <GetFrameworkPath>
+      <Output TaskParameter="Path" PropertyName="FrameworkPath" />
+    </GetFrameworkPath>
+    <PropertyGroup>
+      <ILAsmExe>$(FrameworkPath)\ilasm.exe</ILAsmExe>
+      <ILAsm>"$(ILAsmExe)" /nologo /quiet /output:@(IntermediateAssembly->'"%(FullPath)"', ' ')</ILAsm>
+      <ILAsm Condition=" !Exists ( $(ILAsmExe) ) ">dotnet asm ilasm -nologo -quiet -output:@(IntermediateAssembly->'"%(FullPath)"', ' ')</ILAsm>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(FileAlignment)' != '' ">
+      <ILAsm>$(ILAsm) -alignment=$(FileAlignment)</ILAsm>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(BaseAddress)' != '' ">
+      <ILAsm>$(ILAsm) -base=$(BaseAddress)</ILAsm>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(OutputType)' == 'Library' ">
+      <ILAsm>$(ILAsm) -dll</ILAsm>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(DebugType)' == 'pdbonly' ">
+      <ILAsm>$(ILAsm) -pdb</ILAsm>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(DebugType)' == 'full' ">
+      <ILAsm>$(ILAsm) -debug</ILAsm>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Optimize)' == 'true' ">
+      <ILAsm>$(ILAsm) -optimize</ILAsm>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Prefer32Bit)' == 'true' ">
+      <ILAsm>$(ILAsm) -32BITPREFERRED</ILAsm>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
+      <ILAsm>$(ILAsm) -pe64 -x64</ILAsm>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Platform)' == 'Itanium' ">
+      <ILAsm>$(ILAsm) -pe64 -itanium</ILAsm>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(AssemblyOriginatorKeyFile)' != '' AND $(SignAssembly) ">
+      <ILAsm>$(ILAsm) -key:"$(AssemblyOriginatorKeyFile)"</ILAsm>
+    </PropertyGroup>
+    <PropertyGroup Condition=" Exists ( '$(ILResourceObjFile)' ) ">
+      <ILAsm>$(ILAsm) -resource:"$(ILResourceObjFile)"</ILAsm>
+    </PropertyGroup>
+    <PropertyGroup Condition=" Exists ( '$(ILFile)' ) ">
+      <ILAsm>$(ILAsm) "$(ILFile)"</ILAsm>
+    </PropertyGroup>
+    <Exec Command="$(ILAsm) @(IL->'&quot;%(FullPath)&quot;', ' ')" />
+    <ItemGroup>
+      <FileWrites Include="@(IntermediateAssembly->'%(RootDir)%(Directory)DesignTimeResolveAssemblyReferencesInput.cache', ' ')" />
+    </ItemGroup>
+    <Touch Files="$(ILFile)" />
+  </Target>
+
+</Project>

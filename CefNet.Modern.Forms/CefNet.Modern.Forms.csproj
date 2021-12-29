@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);MODERNFORMS</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\CefNet.Avalonia\WinApi\NativeMethods.cs" Link="WinApi\NativeMethods.cs" />
+    <Compile Include="..\CefNet.Windows.Forms\CursorChangeEventArgs.cs" Link="CursorChangeEventArgs.cs" />
+    <Compile Include="..\CefNet.Windows.Forms\Internal\IWinFormsWebViewPrivate.cs" Link="Internal\IWinFormsWebViewPrivate.cs" />
+    <Compile Include="..\CefNet.Windows.Forms\StartDraggingEventArgs.cs" Link="StartDraggingEventArgs.cs" />
+    <Compile Include="..\CefNet.Windows.Forms\TooltipEventArgs.cs" Link="TooltipEventArgs.cs" />
+    <Compile Include="..\CefNet.Windows.Forms\WinApi\DWMWINDOWATTRIBUTE.cs" Link="WinApi\DWMWINDOWATTRIBUTE.cs" />
+    <Compile Include="..\CefNet\WebView.CommonImplementation.cs" Link="WebView.CommonImplementation.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Modern.Forms" Version="0.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CefNet\CefNet.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="WinApi\" />
+  </ItemGroup>
+
+</Project>

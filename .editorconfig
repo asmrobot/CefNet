@@ -1,0 +1,23 @@
+root = true
+
+[*.cs]
+indent_style = tab
+tab_width = 4
+charset = utf-8-bom
+trim_trailing_whitespace = true
+
+# New line preferences
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_object_initializers = true
+csharp_new_line_before_members_in_anonymous_types = true
+csharp_new_line_between_query_expression_clauses = true
+
+# Wrapping preferences
+csharp_preserve_single_line_statements = true
+csharp_preserve_single_line_blocks = true
+
+# Organize usings
+dotnet_sort_system_directives_first = true

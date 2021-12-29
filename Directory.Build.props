@@ -1,0 +1,39 @@
+<Project>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CodeAnalysisRuleSet>$(SolutionDir)Debug.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="!Exists($(CodeAnalysisRuleSet))">Debug.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="!Exists($(CodeAnalysisRuleSet))">../Debug.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(Configuration) != 'Nuget_Release'">
+    <VersionSuffix>m-$([System.DateTime]::UtcNow.ToString(mmss))</VersionSuffix>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Nuget_Release'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+  <PropertyGroup>
+    <CefVersion>97.0</CefVersion>
+    <VersionBuild>$([System.DateTime]::UtcNow.ToString(yy))$([System.DateTime]::UtcNow.DayOfYear.ToString(000))</VersionBuild>
+    <VersionRevision>$([System.DateTime]::UtcNow.ToString(HHmm))</VersionRevision>
+    <VersionPrefix>$(CefVersion).$(VersionBuild).$(VersionRevision)</VersionPrefix>
+    <AssemblyOriginatorKeyFile>../cefnet.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly Condition="Exists($(AssemblyOriginatorKeyFile))">true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Authors>The CefNet Authors</Authors>
+    <PackageProjectUrl>https://github.com/cefnet</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/cefnet/cefnet</RepositoryUrl>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageReleaseNotes>
+      CEF v.$(CefVersion).*.
+      Binary packages are available for download at:
+      https://cef-builds.spotifycdn.com/index.html
+    </PackageReleaseNotes>
+  </PropertyGroup>
+</Project>

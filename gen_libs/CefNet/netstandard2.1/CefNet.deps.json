@@ -1,0 +1,24 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "CefNet/97.0.21355.0721-m-2146": {
+        "runtime": {
+          "CefNet.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CefNet/97.0.21355.0721-m-2146": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,12 @@
+To generate compatible .NET-types and make the sample app work, they need to be
+able to find a matching version of the CEF. Download a binary distribution from
+http://opensource.spotify.com/cefbuilds/index.html and extract files to this
+directory. Copy Resources/icudtl.dat into the Release directory.
+
+The resulting directory structure looks like this:
+include/
+Release/
+Resources/
+LICENSE.txt
+README.txt
+etc...

@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CefNet", "CefNet\CefNet.csproj", "{57476185-1F6E-4151-B005-ABF13D3EEF6B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CefGen", "CefGen\CefGen.csproj", "{EC30B9A1-6F06-4F6B-9405-47D5C85ED45C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CefNet.Avalonia", "CefNet.Avalonia\CefNet.Avalonia.csproj", "{044DC295-6E6E-4547-8F15-B3B2901E2D93}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaApp", "AvaloniaApp\AvaloniaApp.csproj", "{9E23BFBE-8089-4026-8C64-8172E51BEB4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7E54A01-12CB-43C4-8D18-2A1647F3150C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Nuget_Release|x64 = Nuget_Release|x64
+		Nuget_Release|x86 = Nuget_Release|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57476185-1F6E-4151-B005-ABF13D3EEF6B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{57476185-1F6E-4151-B005-ABF13D3EEF6B}.Debug|x64.Build.0 = Debug|Any CPU
+		{57476185-1F6E-4151-B005-ABF13D3EEF6B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{57476185-1F6E-4151-B005-ABF13D3EEF6B}.Debug|x86.Build.0 = Debug|Any CPU
+		{57476185-1F6E-4151-B005-ABF13D3EEF6B}.Nuget_Release|x64.ActiveCfg = Nuget_Release|Any CPU
+		{57476185-1F6E-4151-B005-ABF13D3EEF6B}.Nuget_Release|x64.Build.0 = Nuget_Release|Any CPU
+		{57476185-1F6E-4151-B005-ABF13D3EEF6B}.Nuget_Release|x86.ActiveCfg = Nuget_Release|Any CPU
+		{57476185-1F6E-4151-B005-ABF13D3EEF6B}.Nuget_Release|x86.Build.0 = Nuget_Release|Any CPU
+		{57476185-1F6E-4151-B005-ABF13D3EEF6B}.Release|x64.ActiveCfg = Release|Any CPU
+		{57476185-1F6E-4151-B005-ABF13D3EEF6B}.Release|x64.Build.0 = Release|Any CPU
+		{57476185-1F6E-4151-B005-ABF13D3EEF6B}.Release|x86.ActiveCfg = Release|Any CPU
+		{57476185-1F6E-4151-B005-ABF13D3EEF6B}.Release|x86.Build.0 = Release|Any CPU
+		{EC30B9A1-6F06-4F6B-9405-47D5C85ED45C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EC30B9A1-6F06-4F6B-9405-47D5C85ED45C}.Debug|x64.Build.0 = Debug|Any CPU
+		{EC30B9A1-6F06-4F6B-9405-47D5C85ED45C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EC30B9A1-6F06-4F6B-9405-47D5C85ED45C}.Debug|x86.Build.0 = Debug|Any CPU
+		{EC30B9A1-6F06-4F6B-9405-47D5C85ED45C}.Nuget_Release|x64.ActiveCfg = Release|Any CPU
+		{EC30B9A1-6F06-4F6B-9405-47D5C85ED45C}.Nuget_Release|x86.ActiveCfg = Release|Any CPU
+		{EC30B9A1-6F06-4F6B-9405-47D5C85ED45C}.Release|x64.ActiveCfg = Release|Any CPU
+		{EC30B9A1-6F06-4F6B-9405-47D5C85ED45C}.Release|x64.Build.0 = Release|Any CPU
+		{EC30B9A1-6F06-4F6B-9405-47D5C85ED45C}.Release|x86.ActiveCfg = Release|Any CPU
+		{EC30B9A1-6F06-4F6B-9405-47D5C85ED45C}.Release|x86.Build.0 = Release|Any CPU
+		{044DC295-6E6E-4547-8F15-B3B2901E2D93}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{044DC295-6E6E-4547-8F15-B3B2901E2D93}.Debug|x64.Build.0 = Debug|Any CPU
+		{044DC295-6E6E-4547-8F15-B3B2901E2D93}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{044DC295-6E6E-4547-8F15-B3B2901E2D93}.Debug|x86.Build.0 = Debug|Any CPU
+		{044DC295-6E6E-4547-8F15-B3B2901E2D93}.Nuget_Release|x64.ActiveCfg = Nuget_Release|Any CPU
+		{044DC295-6E6E-4547-8F15-B3B2901E2D93}.Nuget_Release|x64.Build.0 = Nuget_Release|Any CPU
+		{044DC295-6E6E-4547-8F15-B3B2901E2D93}.Nuget_Release|x86.ActiveCfg = Nuget_Release|Any CPU
+		{044DC295-6E6E-4547-8F15-B3B2901E2D93}.Nuget_Release|x86.Build.0 = Nuget_Release|Any CPU
+		{044DC295-6E6E-4547-8F15-B3B2901E2D93}.Release|x64.ActiveCfg = Release|Any CPU
+		{044DC295-6E6E-4547-8F15-B3B2901E2D93}.Release|x64.Build.0 = Release|Any CPU
+		{044DC295-6E6E-4547-8F15-B3B2901E2D93}.Release|x86.ActiveCfg = Release|Any CPU
+		{044DC295-6E6E-4547-8F15-B3B2901E2D93}.Release|x86.Build.0 = Release|Any CPU
+		{9E23BFBE-8089-4026-8C64-8172E51BEB4E}.Debug|x64.ActiveCfg = Debug|x64
+		{9E23BFBE-8089-4026-8C64-8172E51BEB4E}.Debug|x64.Build.0 = Debug|x64
+		{9E23BFBE-8089-4026-8C64-8172E51BEB4E}.Debug|x86.ActiveCfg = Debug|x86
+		{9E23BFBE-8089-4026-8C64-8172E51BEB4E}.Debug|x86.Build.0 = Debug|x86
+		{9E23BFBE-8089-4026-8C64-8172E51BEB4E}.Nuget_Release|x64.ActiveCfg = Release|x86
+		{9E23BFBE-8089-4026-8C64-8172E51BEB4E}.Nuget_Release|x86.ActiveCfg = Release|x86
+		{9E23BFBE-8089-4026-8C64-8172E51BEB4E}.Release|x64.ActiveCfg = Release|x86
+		{9E23BFBE-8089-4026-8C64-8172E51BEB4E}.Release|x64.Build.0 = Release|x86
+		{9E23BFBE-8089-4026-8C64-8172E51BEB4E}.Release|x86.ActiveCfg = Release|Any CPU
+		{9E23BFBE-8089-4026-8C64-8172E51BEB4E}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCBE95CB-72DF-463E-A524-A675B3405CC3}
+	EndGlobalSection
+EndGlobal

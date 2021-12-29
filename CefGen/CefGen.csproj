@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="VS16_8_FIX.cs" Condition="$(MSBuildVersion.StartsWith('16.8.')) != 'TRUE'" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CppAst" Version="0.8.0-alpha-001" />
+    <PackageReference Include="libClangSharp.runtime.$(RuntimeIdentifier)" Version="12.0.0-beta1" />
+    <PackageReference Include="libclang.runtime.$(RuntimeIdentifier)" Version="12.0.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="3.8.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Settings\BooleanIntParams.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Settings\LicenseTemplate.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Settings\NamesSchema.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

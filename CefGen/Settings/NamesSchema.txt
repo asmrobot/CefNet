@@ -1,0 +1,17 @@
+﻿get_xcoord: GetXCoord
+get_ycoord: GetYCoord
+cef_postdataelement_type: CefPostDataElementType
+cef_v8_propertyattribute: CefV8PropertyAttribute
+cef_errorcode: CefErrorCode
+on_open_urlfrom_tab: OnOpenUrlFromTab
+cont: Continue
+get_frame_byident: GetFrameByIdent
+cef_v8_accesscontrol: CefV8AccessControl
+get_pemencoded: GetPEMEncoded
+get_derencoded: GetDEREncoded
+get_derencoded_issuer_chain: GetDEREncodedIssuerChain
+get_pemencoded_issuer_chain: GetPEMEncodedIssuerChain
+dontenum: DontEnum
+dontdelete: DontDelete
+readonly: ReadOnly
+httponly: HttpOnly

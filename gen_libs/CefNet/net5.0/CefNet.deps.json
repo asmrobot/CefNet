@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "CefNet/97.0.21355.0721-m-2146": {
+        "runtime": {
+          "CefNet.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CefNet/97.0.21355.0721-m-2146": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
